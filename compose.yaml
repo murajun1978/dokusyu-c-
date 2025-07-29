@@ -1,0 +1,11 @@
+services:
+  cpp-dev:
+    # Dockerfileがあるカレントディレクトリをビルドコンテキストとして使用
+    build: .
+    # サービス名（コンテナ名）
+    container_name: cpp-dev-container
+    # ホストの./srcディレクトリをコンテナの/appにマウント
+    volumes:
+      - ./src:/app
+    # コンテナを起動し続けるためのおまじない
+    tty: true
